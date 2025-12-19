@@ -1,0 +1,161 @@
+/* style.css */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3f3f3;
+}
+
+/* Whole canvas */
+.page {
+    position: relative;
+    width: 800px;
+    height: 1000px;
+    margin: 20px auto;
+    background: #fefefe;
+    overflow: hidden;
+}
+
+/* Orange left background */
+.left-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 45%;
+    height: 100%;
+    background: #f37c21;
+}
+
+/* Notebook */
+.notebook {
+    position: absolute;
+    top: 80px;
+    left: 180px;
+    width: 430px;
+    height: 780px;
+    background: #fafaf5;
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    border: 1px solid #e0dfd4;
+    padding: 40px 36px 30px 50px;
+}
+
+/* Spiral effect (simple left strip) */
+.notebook::before {
+    content: "";
+    position: absolute;
+    left: 18px;
+    top: 0;
+    width: 18px;
+    height: 100%;
+    background: repeating-linear-gradient(to bottom,
+            #2c2c30 0,
+            #2c2c30 6px,
+            #fafaf5 6px,
+            #fafaf5 16px);
+}
+
+/* Top strip with text and logo */
+.notebook-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.auction-tag {
+    font-size: 11px;
+    letter-spacing: 1.8px;
+    font-weight: 700;
+    color: #1f3470;
+}
+
+.notebook-logo img {
+    height: 40px;
+}
+
+/* Title */
+.title-block {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.title-main {
+    font-size: 42px;
+    letter-spacing: 5px;
+    font-weight: 900;
+}
+
+.title-sub {
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-top: 4px;
+}
+
+/* Squad lists area */
+.squad-container {
+    display: flex;
+    gap: 32px;
+    margin-top: 10px;
+}
+
+.squad-list {
+    list-style: none;
+    font-size: 13px;
+    line-height: 1.9;
+    color: #181818;
+    width: 33%;
+}
+
+/* Pencil */
+.pencil {
+    position: absolute;
+    right: 90px;
+    top: 130px;
+    width: 18px;
+    height: 560px;
+    background: linear-gradient(to bottom, #0151c6, #0140a5);
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.pencil::before {
+    /* pencil tip */
+    content: "";
+    position: absolute;
+    top: -26px;
+    left: 2px;
+    width: 14px;
+    height: 26px;
+    background: #f4d1a0;
+    clip-path: polygon(50% 0, 0 100%, 100% 100%);
+}
+
+/* Player card */
+.player-card {
+    position: absolute;
+    right: 40px;
+    bottom: 50px;
+    width: 180px;
+    height: 230px;
+    border-radius: 16px;
+    background: #f36b24;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+/* Player image inside card */
+.player-photo img {
+    width: 160px;
+    height: auto;
+    border-radius: 14px;
+    object-fit: cover;
+}
