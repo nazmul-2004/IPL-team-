@@ -1,85 +1,161 @@
-/* Reset */
+/* style.css */
+
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
-/* Background */
 body {
-    min-height: 100vh;
-    background: #a8c4cf;
-    /* blue background */
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3f3f3;
 }
 
-/* Center wrapper */
-.wrapper {
-    min-height: 100vh;
+/* Whole canvas */
+.page {
+    position: relative;
+    width: 800px;
+    height: 1000px;
+    margin: 20px auto;
+    background: #fefefe;
+    overflow: hidden;
+}
+
+/* Orange left background */
+.left-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 45%;
+    height: 100%;
+    background: #f37c21;
+}
+
+/* Notebook */
+.notebook {
+    position: absolute;
+    top: 80px;
+    left: 180px;
+    width: 430px;
+    height: 780px;
+    background: #fafaf5;
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    border: 1px solid #e0dfd4;
+    padding: 40px 36px 30px 50px;
+}
+
+/* Spiral effect (simple left strip) */
+.notebook::before {
+    content: "";
+    position: absolute;
+    left: 18px;
+    top: 0;
+    width: 18px;
+    height: 100%;
+    background: repeating-linear-gradient(to bottom,
+            #2c2c30 0,
+            #2c2c30 6px,
+            #fafaf5 6px,
+            #fafaf5 16px);
+}
+
+/* Top strip with text and logo */
+.notebook-top {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    margin-bottom: 25px;
 }
 
-/* Card */
-.form-card {
-    background: #ffffff;
-    width: 340px;
-    padding: 30px 35px 35px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+.auction-tag {
+    font-size: 11px;
+    letter-spacing: 1.8px;
+    font-weight: 700;
+    color: #1f3470;
 }
 
-/* Heading */
-.form-card h2 {
+.notebook-logo img {
+    height: 40px;
+}
+
+/* Title */
+.title-block {
     text-align: center;
     margin-bottom: 25px;
-    font-size: 28px;
 }
 
-/* Inputs, select, textarea */
-.form-card input,
-.form-card select,
-.form-card textarea {
-    width: 100%;
-    margin-bottom: 15px;
-    padding: 12px 14px;
-    border: none;
-    border-radius: 4px;
-    background: #d9d9d9;
-    /* grey like in image */
-    font-size: 14px;
-    outline: none;
+.title-main {
+    font-size: 42px;
+    letter-spacing: 5px;
+    font-weight: 900;
 }
 
-/* Placeholder / text color */
-.form-card input::placeholder,
-.form-card textarea::placeholder {
-    color: #555555;
+.title-sub {
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-top: 4px;
 }
 
-/* Focus effect */
-.form-card input:focus,
-.form-card select:focus,
-.form-card textarea:focus {
-    background: #cfcfcf;
+/* Squad lists area */
+.squad-container {
+    display: flex;
+    gap: 32px;
+    margin-top: 10px;
 }
 
-/* Button */
-.btn-submit {
-    width: 130px;
-    padding: 10px 0;
-    border: none;
-    border-radius: 4px;
-    background: #006489;
-    color: #ffffff;
-    font-size: 15px;
-    cursor: pointer;
-    display: block;
-    margin: 10px auto 0;
+.squad-list {
+    list-style: none;
+    font-size: 13px;
+    line-height: 1.9;
+    color: #181818;
+    width: 33%;
 }
 
-/* Button hover */
-.btn-submit:hover {
-    background: #005879;
+/* Pencil */
+.pencil {
+    position: absolute;
+    right: 90px;
+    top: 130px;
+    width: 18px;
+    height: 560px;
+    background: linear-gradient(to bottom, #0151c6, #0140a5);
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.pencil::before {
+    /* pencil tip */
+    content: "";
+    position: absolute;
+    top: -26px;
+    left: 2px;
+    width: 14px;
+    height: 26px;
+    background: #f4d1a0;
+    clip-path: polygon(50% 0, 0 100%, 100% 100%);
+}
+
+/* Player card */
+.player-card {
+    position: absolute;
+    right: 40px;
+    bottom: 50px;
+    width: 180px;
+    height: 230px;
+    border-radius: 16px;
+    background: #f36b24;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+/* Player image inside card */
+.player-photo img {
+    width: 160px;
+    height: auto;
+    border-radius: 14px;
+    object-fit: cover;
 }
